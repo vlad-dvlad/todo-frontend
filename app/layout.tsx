@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import ReactQueryProvider from './_providers/react-query';
+import { Footer, Header } from '@/shared';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,10 +25,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`
+          ${geistSans.variable} ${geistMono.variable} antialiased
+          bg-gray-50 text-gray-900
+          min-h-screen
+          flex flex-col
+          selection:bg-green-500 selection:text-white
+        `}
+      >
         <ReactQueryProvider>
-          {children}
+          <Header />
+          <main className="flex-grow max-w-7xl mx-auto w-full px-6 py-8 md:py-8">
+            {children}
+          </main>
+          <Footer />
         </ReactQueryProvider>
       </body>
     </html>

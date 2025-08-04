@@ -10,9 +10,7 @@ export const axiosInstance = axios.create({
   },
 })
 
-// Перехоплення запитів
 axiosInstance.interceptors.request.use(config => {
-  // Якщо є попередній запит — скасовуємо
   if (controller) {
     controller.abort()
   }
@@ -23,7 +21,6 @@ axiosInstance.interceptors.request.use(config => {
   return config
 })
 
-// Перехоплення відповідей
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
     controller = null

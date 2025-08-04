@@ -1,26 +1,75 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root,
+.light,
+.light-theme {
+  --green-1: #f6f8f7;
+  --green-2: #f0f5f1;
+  --green-3: #e3efe5;
+  --green-4: #d4e8d9;
+  --green-5: #c4dfca;
+  --green-6: #b1d3b9;
+  --green-7: #96c3a1;
+  --green-8: #6fac80;
+  --green-9: #5ba471;
+  --green-10: #529767;
+  --green-11: #2b7646;
+  --green-12: #24392a;
+
+  --green-a1: #2f956205;
+  --green-a2: #13872a0b;
+  --green-a3: #06861b18;
+  --green-a4: #02852327;
+  --green-a5: #05802038;
+  --green-a6: #02761e4b;
+  --green-a7: #00711c66;
+  --green-a8: #006e1f8e;
+  --green-a9: #027424a3;
+  --green-a10: #016821ac;
+  --green-a11: #015c22d4;
+  --green-a12: #011a08db;
+
+  --green-contrast: #fff;
+  --green-surface: #eef4efcc;
+  --green-indicator: #5ba471;
+  --green-track: #5ba471;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    :root,
+    .light,
+    .light-theme {
+      --green-1: oklch(97.8% 0.0034 152.2);
+      --green-2: oklch(96.4% 0.0075 152.2);
+      --green-3: oklch(94% 0.0188 152.2);
+      --green-4: oklch(91.3% 0.0296 152.2);
+      --green-5: oklch(87.9% 0.0403 152.2);
+      --green-6: oklch(83.5% 0.0523 152.2);
+      --green-7: oklch(77.5% 0.0679 152.2);
+      --green-8: oklch(69.2% 0.0908 152.2);
+      --green-9: oklch(65.7% 0.1061 152.2);
+      --green-10: oklch(61.8% 0.1011 152.2);
+      --green-11: oklch(50.6% 0.1061 152.2);
+      --green-12: oklch(32.3% 0.0381 152.2);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+      --green-a1: color(display-p3 0 0.4902 0.2471 / 0.016);
+      --green-a2: color(display-p3 0 0.4392 0 / 0.036);
+      --green-a3: color(display-p3 0 0.4706 0.0471 / 0.084);
+      --green-a4: color(display-p3 0 0.4353 0.0588 / 0.136);
+      --green-a5: color(display-p3 0 0.4235 0.0627 / 0.196);
+      --green-a6: color(display-p3 0 0.3882 0.0471 / 0.264);
+      --green-a7: color(display-p3 0 0.3804 0.0549 / 0.364);
+      --green-a8: color(display-p3 0 0.3529 0.0549 / 0.5);
+      --green-a9: color(display-p3 0 0.3686 0.0588 / 0.564);
+      --green-a10: color(display-p3 0 0.3255 0.0549 / 0.604);
+      --green-a11: color(display-p3 0 0.2745 0.0549 / 0.744);
+      --green-a12: color(display-p3 0 0.0706 0.0078 / 0.836);
+
+      --green-contrast: #fff;
+      --green-surface: color(display-p3 0.9333 0.9529 0.9373 / 0.8);
+      --green-indicator: oklch(65.7% 0.1061 152.2);
+      --green-track: oklch(65.7% 0.1061 152.2);
+    }
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

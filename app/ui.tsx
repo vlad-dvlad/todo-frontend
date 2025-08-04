@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { useGetTasks } from './api/task';
+import { useGetTasks } from '../api/task';
 
 const Ui = () => {
     const { data: tasksData } = useGetTasks()

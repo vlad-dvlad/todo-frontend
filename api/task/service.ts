@@ -1,5 +1,5 @@
-import { Task } from "@/app/models/task"
-import { api } from "@/app/shared"
+import { Task } from "@/models/task"
+import { api } from "@/shared"
 
 export const getTasks = async () => {
     try {

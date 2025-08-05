@@ -1,13 +1,13 @@
-import { Task } from "@/models/task"
+import { User } from "@/models/user"
 import { api, PageParams, PaginatedApiResponse } from "@/shared"
 
-export const getTasks = async (params: PageParams)  => {
+export const getUsers = async (params: PageParams)  => {
     try {
-        const data = await api.get<PaginatedApiResponse<Task>>('/tasks', {
+        const data = await api.get<PaginatedApiResponse<User>>('/users', {
             params
         })
         return data;
     } catch (e) {
         console.error(e)
     }
-}
+} 

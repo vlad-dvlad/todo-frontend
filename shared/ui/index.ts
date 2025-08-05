@@ -1,2 +1,5 @@
 export { Footer } from './footer/footer'
 export { Header } from './header/header'
+export { TaskList } from './tasks/task-list'
+export { Pagination } from './pagination'
+export { UserList } from './users'
